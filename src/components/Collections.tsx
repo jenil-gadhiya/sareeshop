@@ -30,7 +30,7 @@ export default function Collections() {
   useEffect(() => {
     const cards = document.querySelectorAll(".collection-card");
 
-    cards.forEach((card, index) => {
+    cards.forEach((card) => {
       const image = card.querySelector(".collection-image");
       const text = card.querySelector(".collection-text");
 
@@ -78,7 +78,7 @@ export default function Collections() {
         </div>
 
         <div className="space-y-32 md:space-y-48">
-          {collections.map((collection, index) => (
+          {collections.map((collection) => (
             <div
               key={collection.title}
               className={cn(

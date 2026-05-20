@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { useCart } from "@/context/CartContext";
 import gsap from "gsap";
-import { cn } from "@/lib/utils";
 
 export default function CartDrawer() {
   const { isCartOpen, closeCart, items, removeItem } = useCart();

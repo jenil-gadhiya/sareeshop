@@ -1,8 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
 
 const reviews = [
   {
@@ -94,7 +92,7 @@ export default function CustomerReviews() {
               </div>
               
               <p className="text-lg font-serif text-[#1A1A1A] leading-relaxed mb-6 flex-grow">
-                "{review.text}"
+                &quot;{review.text}&quot;
               </p>
               
               <p className="uppercase tracking-widest text-[10px] text-[#1A1A1A]/50 font-bold mb-8">
