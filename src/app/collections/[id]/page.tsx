@@ -112,11 +112,11 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ id: s
             </div>
           </div>
 
-          {/* Sticky Mobile Action Bar */}
-          <div className="fixed bottom-0 left-0 w-full bg-[#FDFBF7] p-4 border-t border-[#1A1A1A]/10 z-50 flex flex-row lg:flex-col gap-3 lg:relative lg:p-0 lg:border-none lg:bg-transparent lg:z-auto pdp-element shadow-[0_-10px_20px_rgba(0,0,0,0.05)] lg:shadow-none">
+          {/* Desktop Action Buttons */}
+          <div className="hidden lg:flex flex-col gap-4 mt-12 pdp-element">
             <button
               onClick={handleAddToCart}
-              className="flex-1 lg:w-full py-4 lg:py-5 bg-[#1A1A1A] text-[#FDFBF7] uppercase tracking-widest text-xs lg:text-sm hover:bg-[#5E1914] transition-colors duration-500"
+              className="w-full py-5 bg-[#1A1A1A] text-[#FDFBF7] uppercase tracking-widest text-sm hover:bg-[#5E1914] transition-colors duration-500"
             >
               Add to Cart
             </button>
@@ -124,16 +124,34 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ id: s
               href={`https://wa.me/919825146267?text=${whatsappMessage}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 lg:w-full py-4 lg:py-5 border border-[#1A1A1A] text-[#1A1A1A] uppercase tracking-widest text-xs lg:text-sm hover:bg-[#25D366] hover:border-[#25D366] hover:text-white transition-colors duration-500 flex items-center justify-center gap-2"
+              className="w-full py-5 border border-[#1A1A1A] text-[#1A1A1A] uppercase tracking-widest text-sm hover:bg-[#25D366] hover:border-[#25D366] hover:text-white transition-colors duration-500 flex items-center justify-center gap-2"
             >
               Buy on WhatsApp
+            </a>
+          </div>
+
+          {/* Sticky Mobile Action Bar */}
+          <div className="fixed bottom-0 left-0 w-full bg-[#FDFBF7] p-4 border-t border-[#1A1A1A]/10 z-50 flex flex-row lg:hidden gap-3 pdp-element shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
+            <button
+              onClick={handleAddToCart}
+              className="flex-1 py-4 bg-[#1A1A1A] text-[#FDFBF7] uppercase tracking-widest text-xs hover:bg-[#5E1914] transition-colors duration-500"
+            >
+              Add to Cart
+            </button>
+            <a 
+              href={`https://wa.me/919825146267?text=${whatsappMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 py-4 border border-[#1A1A1A] text-[#1A1A1A] uppercase tracking-widest text-xs hover:bg-[#25D366] hover:border-[#25D366] hover:text-white transition-colors duration-500 flex items-center justify-center gap-2"
+            >
+              WhatsApp
             </a>
           </div>
         </div>
 
         {/* Right Column - Images (Stacked Desktop, Swipe Gallery Mobile) */}
         <div ref={rightColRef} className="w-full lg:w-3/5">
-          <div className="flex overflow-x-auto lg:flex-col snap-x snap-mandatory hide-scrollbar">
+          <div className="flex overflow-x-auto lg:block snap-x snap-mandatory hide-scrollbar">
             {product.images.map((src, index) => (
               <div 
                 key={index} 

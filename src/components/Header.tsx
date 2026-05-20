@@ -104,8 +104,8 @@ export default function Header() {
         </div>
       </header>
 
-      <div className="menu-overlay fixed inset-0 z-40 bg-[#FDFBF7] -translate-y-full flex items-center justify-center">
-        <nav className="flex flex-col items-center gap-8 md:gap-12 text-center">
+      <div className="menu-overlay fixed inset-0 z-40 bg-[#FDFBF7] -translate-y-full flex items-center">
+        <nav className="w-full h-full flex flex-col items-center justify-start overflow-y-auto pt-32 pb-16 gap-8 md:gap-12 text-center">
           {navLinks.map((link) => (
             <Link
               key={link.name}
