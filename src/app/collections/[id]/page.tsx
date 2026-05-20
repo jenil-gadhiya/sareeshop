@@ -61,12 +61,12 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ id: s
 
   return (
     <main className="w-full bg-[#FDFBF7] min-h-screen pb-24 lg:pb-0">
-      <div className="flex flex-col lg:flex-row w-full max-w-[1920px] mx-auto">
+      <div className="flex flex-col lg:flex-row items-start w-full max-w-[1920px] mx-auto">
         
         {/* Left Column - Sticky Details */}
         <div 
           ref={leftColRef} 
-          className="w-full lg:w-2/5 lg:h-screen lg:sticky top-0 p-8 pt-32 lg:p-20 lg:pt-40 flex flex-col justify-between border-r border-[#1A1A1A]/10 bg-[#FDFBF7] z-10"
+          className="w-full lg:w-2/5 lg:h-screen lg:sticky top-0 p-8 pt-32 lg:p-20 lg:pt-40 flex flex-col justify-between border-r border-[#1A1A1A]/10 bg-[#FDFBF7] z-10 overflow-y-auto hide-scrollbar"
         >
           <div>
             <Link href="/collections" className="inline-flex items-center gap-2 uppercase tracking-widest text-xs text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors mb-12 pdp-element">
