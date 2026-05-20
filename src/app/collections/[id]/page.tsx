@@ -66,12 +66,11 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ id: s
         {/* Left Column - Sticky Details */}
         <div 
           ref={leftColRef} 
-          className="w-full lg:w-2/5 lg:h-screen lg:sticky top-0 p-8 pt-32 lg:p-20 lg:pt-40 flex flex-col justify-between border-r border-[#1A1A1A]/10 bg-[#FDFBF7] z-10 overflow-y-auto hide-scrollbar"
+          className="w-full lg:w-2/5 lg:h-fit lg:sticky top-0 p-8 pt-32 lg:p-20 lg:pt-40 border-r border-[#1A1A1A]/10 bg-[#FDFBF7] z-10"
         >
-          <div>
-            <Link href="/collections" className="inline-flex items-center gap-2 uppercase tracking-widest text-xs text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors mb-12 pdp-element">
-              <span>←</span> Back to Collections
-            </Link>
+          <Link href="/collections" className="inline-flex items-center gap-2 uppercase tracking-widest text-xs text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors mb-12 pdp-element">
+            <span>←</span> Back to Collections
+          </Link>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-[#1A1A1A] mb-2 pdp-element leading-tight">
               {product.title}
@@ -81,6 +80,24 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ id: s
             <div className="flex items-center gap-4 mb-8 pdp-element">
               <p className="text-2xl text-[#1A1A1A] font-medium">{product.price}</p>
               <span className="px-3 py-1 bg-[#5E1914]/10 text-[#5E1914] text-[10px] uppercase tracking-widest font-bold">Only 2 Left in Stock</span>
+            </div>
+
+            {/* Desktop Action Buttons */}
+            <div className="hidden lg:flex flex-col gap-4 mb-12 pdp-element">
+              <button
+                onClick={handleAddToCart}
+                className="w-full py-5 bg-[#1A1A1A] text-[#FDFBF7] uppercase tracking-widest text-sm hover:bg-[#5E1914] transition-colors duration-500"
+              >
+                Add to Cart
+              </button>
+              <a 
+                href={`https://wa.me/919825146267?text=${whatsappMessage}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-5 border border-[#1A1A1A] text-[#1A1A1A] uppercase tracking-widest text-sm hover:bg-[#25D366] hover:border-[#25D366] hover:text-white transition-colors duration-500 flex items-center justify-center gap-2"
+              >
+                Buy on WhatsApp
+              </a>
             </div>
             
             <p className="text-lg text-[#1A1A1A]/80 font-light leading-relaxed mb-10 pdp-element">
@@ -110,25 +127,7 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ id: s
                 <p className="text-xs font-serif text-[#1A1A1A] mt-1">7 Days Policy</p>
               </div>
             </div>
-          </div>
-
-          {/* Desktop Action Buttons */}
-          <div className="hidden lg:flex flex-col gap-4 mt-12 pdp-element">
-            <button
-              onClick={handleAddToCart}
-              className="w-full py-5 bg-[#1A1A1A] text-[#FDFBF7] uppercase tracking-widest text-sm hover:bg-[#5E1914] transition-colors duration-500"
-            >
-              Add to Cart
-            </button>
-            <a 
-              href={`https://wa.me/919825146267?text=${whatsappMessage}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full py-5 border border-[#1A1A1A] text-[#1A1A1A] uppercase tracking-widest text-sm hover:bg-[#25D366] hover:border-[#25D366] hover:text-white transition-colors duration-500 flex items-center justify-center gap-2"
-            >
-              Buy on WhatsApp
-            </a>
-          </div>
+            </div>
 
           {/* Sticky Mobile Action Bar */}
           <div className="fixed bottom-0 left-0 w-full bg-[#FDFBF7] p-4 border-t border-[#1A1A1A]/10 z-50 flex flex-row lg:hidden gap-3 pdp-element shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
