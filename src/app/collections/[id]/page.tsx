@@ -127,8 +127,6 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ id: s
                 <p className="text-xs font-serif text-[#1A1A1A] mt-1">7 Days Policy</p>
               </div>
             </div>
-            </div>
-
           {/* Sticky Mobile Action Bar */}
           <div className="fixed bottom-0 left-0 w-full bg-[#FDFBF7] p-4 border-t border-[#1A1A1A]/10 z-50 flex flex-row lg:hidden gap-3 pdp-element shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
             <button
